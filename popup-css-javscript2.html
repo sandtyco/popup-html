@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Popup</title>
+</head>
+
+<body>
+	
+<h2>Membuat Popup Sederhana dengan Javacript dan CSS</h2>
+
+<!-- trigger the jwpopup -->
+<a href="javascript:void(0);" id="jwpopupLink">Klik disini untuk membuka popup</a>
+
+<!-- jwpopup box -->
+<div id="jwpopupBox" class="jwpopup">
+	<!-- jwpopup content -->
+	<div class="jwpopup-content">
+		<div class="jwpopup-head">
+			<span class="close">×</span>
+			<h2>[Popup Header] Popup dengan Javascript dan CSS</h2>
+		</div>
+		<div class="jwpopup-main">
+			<p>[Popup Content] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis maxime nobis quod veritatis facere velit cum optio obcaecati soluta ratione amet iusto nulla, expedita blanditiis tempora inventore tempore impedit itaque.</p>
+		</div>
+		<div class="jwpopup-foot">
+			<p>[Popup Footer] Creating popup using Javascript and CSS</p>
+		</div>
+	</div>
+</div>
+
+<script>
+	
+// untuk mendapatkan jwpopup
+var jwpopup = document.getElementById('jwpopupBox');
+
+// untuk mendapatkan link untuk membuka jwpopup
+var mpLink = document.getElementById("jwpopupLink");
+
+// untuk mendapatkan aksi elemen close
+var close = document.getElementsByClassName("close")[0];
+
+// membuka jwpopup ketika link di klik
+mpLink.onclick = function() {
+    jwpopup.style.display = "block";
+}
+
+// membuka jwpopup ketika elemen di klik
+close.onclick = function() {
+    jwpopup.style.display = "none";
+}
+
+// membuka jwpopup ketika user melakukan klik diluar area popup
+window.onclick = function(event) {
+    if (event.target == jwpopup) {
+        jwpopup.style.display = "none";
+    }
+}
+
+</script>
+
+</body>
+</html>
